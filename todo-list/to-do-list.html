@@ -3,20 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TodoList</title>
+    <title>To DO List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-    <h1>To-do List</h1>
     
-<p>Welcome to this todo list. Double click to edit the todo</p>
-    <!-- Input and button to add new todos  -->
-     <input type="text" id="todo-input" placeholder="Enter a todo and press Add or Enter">
+    <nav>
+        <div class="nav-links">
+            <a href="#" id="nav-add-task">Add Task</a>
+            <a href="#" id="nav-about">About Me</a>
+        </div>
+    </nav>
 
-     <button id="add-btn">Add</button>
-     <ul id="todo-list"></ul>
+    <main>
+        <section id="task-section">
+            <h1>My Tasks</h1>
+            <p>Welcome to your todo list. Double click a task to edit.</p>
+            
+            <div class="input-wrapper">
+                <input type="text" id="todo-input" placeholder="Enter a task and press Enter...">
+                <button id="add-btn">Add</button>
+            </div>
+            
+            <ul id="todo-list"></ul>
+        </section>
+    </main>
 
-    
-     <script src="todo-list.js"></script>
+    <div id="about-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>About Me</h2>
+            <div class="about-card">
+                <img src="/Java-script-project/todo-list/profile picture.jpeg" alt="Profile" class="profile-img">
+                <div class="about-info">
+                    <h3>Aditya Kumar Rouniyar</h3>
+                    <p><strong>Semester:</strong> 2nd semster</p>
+                    <p><strong>Student ID:</strong> 2511981278</p>
+                    <p><strong>Section:</strong> D2</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="todo-list.js"></script>
 </body>
 </html>
