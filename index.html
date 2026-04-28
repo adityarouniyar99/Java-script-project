@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To DO List | Aditya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    
+    <nav>
+        <div class="nav-links">
+            <a href="#" id="nav-add-task">Add Task</a>
+            <a href="#" id="nav-about">About Me</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="task-section">
+            <h1>My Tasks</h1>
+            
+            <div id="progress-wrapper">
+                <span id="progress-percentage">0%</span>
+                <div id="progress-container">
+                    <div id="progress-bar"></div>
+                </div>
+            </div>
+
+            <p>Welcome to your todo list. Double click a task to edit.<br>
+            !! Add the Task here, <br> Make your daily life easier !!</p>
+            
+            <div class="input-wrapper">
+                <input type="text" id="todo-input" placeholder="Enter a task and press Enter...">
+                
+                <select id="priority-input">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+
+                <input type="date" id="date-input">
+                
+                <button id="add-btn">Add</button>
+            </div>
+            
+            <ul id="todo-list"></ul>
+        </section>
+    </main>
+
+    <div id="about-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>About Me</h2>
+            <div class="about-card">
+                <img src="profile.jpg" alt="Profile" class="profile-img">
+                <div class="about-info">
+                    <h3>Aditya Kumar Rouniyar</h3>
+                    <p><strong>Semester:</strong> 2nd semester</p>
+                    <p><strong>Student ID:</strong> 2511981278</p>
+                    <p><strong>Section:</strong> D2</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="todo-list.js"></script>
+</body>
+</html>
