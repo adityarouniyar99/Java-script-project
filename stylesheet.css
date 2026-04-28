@@ -1,0 +1,137 @@
+/* General Reset - Unchanged */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #fdfaf1; /* Original cream */
+  color: #4a3f35; /* Original brown */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Nav - Unchanged */
+nav {
+  width: 100%;
+  padding: 25px 0;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+}
+.nav-links { display: flex; gap: 40px; }
+nav a { text-decoration: none; color: #8c7b6c; font-size: 1.1rem; font-weight: 500; transition: all 0.3s ease; padding: 5px 10px; }
+nav a:hover { color: #d4a373; transform: translateY(-2px); }
+
+/* Main Content - Unchanged */
+main { width: 100%; max-width: 700px; padding: 40px 20px; text-align: center; }
+h1 { font-size: 2.5rem; margin-bottom: 10px; color: #3e362e; }
+p { color: #8c7b6c; margin-bottom: 20px; }
+
+/* *** NEW: Minimal Progress Bar (Brown tone) *** */
+#progress-wrapper {
+  margin-bottom: 25px;
+  text-align: left;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#progress-percentage { font-size: 0.9rem; color: #8c7b6c; font-weight: 500; }
+#progress-container {
+  width: 100%;
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+#progress-bar {
+  width: 0%;
+  height: 100%;
+  background: #d4a373; /* Original brown accent */
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+/* *** MODIFIED: Task Input UI to accommodate new fields *** */
+.input-wrapper {
+  display: flex;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+  align-items: center; /* Vertical alignment */
+}
+
+#todo-input {
+  flex: 2; /* More space for text */
+  padding: 15px 20px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: #fff;
+}
+
+/* NEW minimal inputs style */
+#priority-input, #date-input {
+  border: none;
+  background: transparent;
+  padding: 10px;
+  color: #8c7b6c;
+  outline: none;
+  border-left: 1px solid #eee; /* Divider */
+}
+
+#add-btn {
+  padding: 15px 25px; /* Adjust height to match input */
+  height: 100%; /* Fill the wrapper */
+  background: #d4a373;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+#add-btn:hover { background: #bc8a5f; }
+
+/* *** MODIFIED: Todo List with Priority Side-Border *** */
+#todo-list { list-style: none; width: 100%; background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); overflow: hidden; }
+#todo-list li {
+  display: flex; align-items: center; padding: 15px 20px;
+  border-bottom: 1px solid #f9f3e9; transition: background 0.2s;
+  /* Make space for new text content */
+}
+#todo-list li:hover { background: #fdfbf7; }
+
+/* NEW: Priority Left Borders */
+.priority-High { border-left: 5px solid #ff6b6b !important; }
+.priority-Medium { border-left: 5px solid #ffd93d !important; }
+.priority-Low { border-left: 5px solid #6bcb77 !important; }
+
+#todo-list span {
+  flex: 1; text-align: left; margin: 0 15px;
+  /* To accommodate small text */
+  display: flex; flex-direction: column;
+}
+#todo-list span strong { font-size: 1rem; }
+#todo-list span small { font-size: 0.8rem; color: #b5a89d; margin-top: 2px; }
+
+/* Checkbox and Completed State - Unchanged */
+#todo-list input[type="checkbox"] { accent-color: #d4a373; transform: scale(1.2); }
+#todo-list li input[type="checkbox"]:checked + span { text-decoration: line-through; color: #b5a89d; opacity: 0.7; }
+
+#todo-list button { background: #f2d5d5; color: #a65d5d; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; }
+
+/* --- Modal Styles - Unchanged --- */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.4); backdrop-filter: blur(4px); justify-content: center; align-items: center; }
+.modal-content { background-color: #fdfaf1; padding: 30px; border-radius: 20px; width: 90%; max-width: 400px; text-align: center; position: relative; animation: slideIn 0.4s ease-out; box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
+@keyframes slideIn { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.close-btn { position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: #8c7b6c; }
+.about-card { margin-top: 20px; }
+.profile-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; object-position: top center; margin-bottom: 15px; border: 3px solid #d4a373; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.about-info h3 { margin-bottom: 10px; }
+.about-info p { margin-bottom: 5px; font-size: 0.9rem; }
